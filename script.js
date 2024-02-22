@@ -31,23 +31,23 @@ function getUserChoice (){
 getComputerChoice();
 getUserChoice();
 
-console.log("Before function call: " + playerSelection, computerSelection);
+// console.log("Before function call: " + playerSelection, computerSelection);
 
 
 let roundResult;
 function playRound () {
-    console.log("In function call: " + "User " + playerSelection + "   " + "Computer " + computerSelection);
+    console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
 
     if (playerSelection===computerSelection) {
-        alert("It's tie! Go again.");
+        console.log("IT'S A TIE, GO AGAIN!");
         roundResult = "tie";
         return roundResult;
     } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
-        alert("You win!!!");
+        console.log("YOU WIN!!! :)");
         roundResult = "win";
         return roundResult;
     } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {
-        alert("You lost this won :(");
+        console.log("YOU LOST THIS ONE :(");
         roundResult = "lose";
         return roundResult;
     }
@@ -55,6 +55,13 @@ function playRound () {
 
 playRound();
 console.log(roundResult);
+
+
+
+
+
+
+
 
 
 
