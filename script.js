@@ -29,16 +29,13 @@ function getUserChoice (){
 getUserChoice();
 getComputerChoice();
 
-
-function playRound (playerSelection, computerSelection){
+function playRound (playerSelection, computerSelection) {
     
 
-    let playerSelection = "rock";
-    let computerSelection = getUserChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    
 
 }
+    
+
 
 
 
