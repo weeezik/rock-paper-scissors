@@ -18,27 +18,44 @@ function getComputerChoice (){
 
 let playerSelection;
 function getUserChoice (){
-   playerSelection1 = prompt("Type your throw! Rock, paper, or scissors?");
+    playerSelection1 = prompt("Type your throw! Rock, paper, or scissors?");
     //remove spaces
-    let playerSelection2 = playerSelection1.replace(" ", "");
+    playerSelection2 = playerSelection1.replace(" ", "");
     //make all lower case. pretty sure the function is string.toLowerCase()
-    let playerSelection = playerSelection2.toLowerCase();
+    playerSelection = playerSelection2.toLowerCase();
+
     return playerSelection;
 }
 
 
-
-getUserChoice();
 getComputerChoice();
+getUserChoice();
 
-console.log(playerSelection + " " + computerSelection);
+console.log("Before function call: " + playerSelection, computerSelection);
 
 
+let roundResult;
+function playRound () {
+    console.log("In function call: " + "User " + playerSelection + "   " + "Computer " + computerSelection);
 
-function playRound (playerSelection, computerSelection) {
-  
+    if (playerSelection===computerSelection) {
+        alert("It's tie! Go again.");
+        roundResult = "tie";
+    } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
+        alert("You win!!!");
+        roundResult = "win";
+    } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {
+        alert("You lost this won :(");
+        roundResult = "lose";
+    }
 }
+
 playRound();
+console.log(roundResult);
+
+
+
+
 
 
 
