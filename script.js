@@ -38,7 +38,7 @@ let roundResult;
 function playRound () {
     getComputerChoice();
     getUserChoice();
-    console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
+    // console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection===computerSelection) {
         console.log("IT'S A TIE!");
         roundResult = "tie";
@@ -71,7 +71,7 @@ function playGame () {
             } else if (roundResult==="lose") {
                 ++computerScore;
             } else if (roundResult==="tie") {
-                console.log("tie");
+                //console.log("tie");
             }
         }
         //1
