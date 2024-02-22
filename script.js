@@ -53,8 +53,35 @@ function playRound () {
     }
 }
 
-playRound();
-console.log(roundResult);
+// playRound();
+// console.log(roundResult);
+
+let finalResult;
+let playerScore;
+let computerScore;
+
+function playGame () {
+        playerScore = 0;
+        computerScore = 0;
+        let i=0;
+        
+        if (i<5) {
+        playRound();    
+        ++i;
+
+        if (roundResult==="win") {
+            ++playerScore;
+        } else if (roundResult==="lose") {
+            ++computerScore;
+        } else if (roundResult==="tie") {
+            console.log("tie");
+            }
+        }
+        
+    }
+playGame();
+console.log(playerScore);
+console.log(computerScore);
 
 
 
@@ -70,11 +97,35 @@ console.log(roundResult);
 
 
 
+//1
+            //iteration attempt at function
+    // playRound();
+    // ++i;
+
+    // if (roundResult==="win") {
+    //     ++playerScore;
+    // } else if (roundResult==="lose") {
+    //     ++computerScore;
+    // } else if (roundResult==="tie") {
+    //     console.log("tie");
+    // }
+
+  
+            //original playgame function
     
 
 
-
-
+//for loop attempt
+        // for (let step = 0; step < 5; step++) {
+        //     playRound();    
+        //     if (roundResult==="win") {
+        //         ++playerScore;
+        //     } else if (roundResult==="lose") {
+        //         ++computerScore;
+        //     } else if (roundResult==="tie") {
+        //         console.log("tie");
+        //     }
+        // }
 
 
 
