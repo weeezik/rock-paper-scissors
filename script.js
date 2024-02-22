@@ -36,8 +36,9 @@ function getUserChoice (){
 
 let roundResult;
 function playRound () {
+    getComputerChoice();
+    getUserChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
-
     if (playerSelection===computerSelection) {
         console.log("IT'S A TIE!");
         roundResult = "tie";
@@ -74,28 +75,18 @@ function playGame () {
             }
         }
         //1
-        getComputerChoice();
-        getUserChoice();
         playRound();
         iterationLogic();
         //2
-        getComputerChoice();
-        getUserChoice();
         playRound();
         iterationLogic();
         //3
-        getComputerChoice();
-        getUserChoice();
         playRound();
         iterationLogic();
         //4
-        getComputerChoice();
-        getUserChoice();
         playRound();
         iterationLogic();
         //5
-        getComputerChoice();
-        getUserChoice();
         playRound();
         iterationLogic();
 
