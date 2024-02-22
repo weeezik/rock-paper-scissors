@@ -41,12 +41,15 @@ function playRound () {
     if (playerSelection===computerSelection) {
         alert("It's tie! Go again.");
         roundResult = "tie";
+        return roundResult;
     } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
         alert("You win!!!");
         roundResult = "win";
+        return roundResult;
     } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {
         alert("You lost this won :(");
         roundResult = "lose";
+        return roundResult;
     }
 }
 
