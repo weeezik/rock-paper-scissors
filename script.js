@@ -28,8 +28,8 @@ function getUserChoice (){
 }
 
 
-getComputerChoice();
-getUserChoice();
+// getComputerChoice();
+// getUserChoice();
 
 // console.log("Before function call: " + playerSelection, computerSelection);
 
@@ -39,7 +39,7 @@ function playRound () {
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
 
     if (playerSelection===computerSelection) {
-        console.log("IT'S A TIE, GO AGAIN!");
+        console.log("IT'S A TIE!");
         roundResult = "tie";
         return roundResult;
     } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
@@ -56,32 +56,67 @@ function playRound () {
 // playRound();
 // console.log(roundResult);
 
-let finalResult;
+
 let playerScore;
 let computerScore;
+let finalResult;
 
 function playGame () {
-        playerScore = 0;
-        computerScore = 0;
-        let i=0;
-        
-        if (i<5) {
-        playRound();    
-        ++i;
-
-        if (roundResult==="win") {
-            ++playerScore;
-        } else if (roundResult==="lose") {
-            ++computerScore;
-        } else if (roundResult==="tie") {
-            console.log("tie");
+    playerScore = 0;
+    computerScore = 0;
+    function iterationLogic () {
+            if (roundResult==="win") {
+                ++playerScore;
+            } else if (roundResult==="lose") {
+                ++computerScore;
+            } else if (roundResult==="tie") {
+                console.log("tie");
             }
         }
+        //1
+        getComputerChoice();
+        getUserChoice();
+        playRound();
+        iterationLogic();
+        //2
+        getComputerChoice();
+        getUserChoice();
+        playRound();
+        iterationLogic();
+        //3
+        getComputerChoice();
+        getUserChoice();
+        playRound();
+        iterationLogic();
+        //4
+        getComputerChoice();
+        getUserChoice();
+        playRound();
+        iterationLogic();
+        //5
+        getComputerChoice();
+        getUserChoice();
+        playRound();
+        iterationLogic();
+
         
+
+        let finalResult = Math.max(playerScore, computerScore);
+        if (finalResult===playerScore) {
+            console.log("Congratulations! You beat the computer in rock paper scissors!")
+        } else {
+            console.log("Ruh roh :( Looks like you lost to the computer.")
+        }
+    
     }
+
 playGame();
-console.log(playerScore);
-console.log(computerScore);
+
+
+
+
+// console.log(playerScore);
+// console.log(computerScore);
 
 
 
