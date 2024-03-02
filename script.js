@@ -1,6 +1,6 @@
 //DOM Manipulation
-
-const buttondiv = document.createElement('div');
+    //Buttons
+const buttondiv = document.createElement("div");
 document.body.appendChild(buttondiv);
 const rockbtn = document.createElement("button");
 const paperbtn = document.createElement("button");
@@ -14,9 +14,13 @@ rockbtn.textContent = "Rock";
 paperbtn.textContent = "Paper";
 scissorsbtn.textContent = "Scissors";
 
+
+
+
+
 //Functions micro
 
-//Calculate computer choice
+    //Calculate computer choice
 let computerSelection;
 function getComputerChoice (){
     let computerNumber = Math.floor(Math.random()*3);
@@ -32,7 +36,7 @@ function getComputerChoice (){
     return computerSelection;
 }
 
-//play one round of rps
+    //play one round of rps
 let roundResult;
 function playRound (playerSelection) {
     getComputerChoice();
@@ -52,6 +56,21 @@ function playRound (playerSelection) {
     }
 }
 
+//Iteration logic for playing more than one round
+let playerScore;
+let computerScore;
+function iterationLogic () {
+                if (roundResult==="win") {
+                    ++playerScore;
+                } else if (roundResult==="lose") {
+                    ++computerScore;
+                } else if (roundResult==="tie") {
+                    //console.log("tie");
+                }
+            }
+
+
+//Functions macro
 let playerSelection;
     rockbtn.addEventListener('click', () => {
         console.log("Rock was clicked");
@@ -64,20 +83,27 @@ let playerSelection;
         playRound(playerSelection);
     });
     scissorsbtn.addEventListener('click', () => {
-        console.log("Scissors was clickeddd")
+        console.log("Scissors was clicked")
         let playerSelection = "scissors";
         playRound(playerSelection);
-    });    
-    
+    });
 
-// buttondiv.addEventListener('click', playRound);
 
+
+
+
+    //Score Counter
+const score = document.createElement("div");
+document.body.appendChild(score);
+score.style.backgroundColor = "hotpink";
+score.textContent = "Player Score: " + playerScore + "      " + "Computer Score:" + computerScore;
+    //Flex attempt below doesn't throw an error, can be used when applicable to format
+// score.style.display = "flex";
+// score.style.justifyContent = "space-between";
 
 
 //THE CODE BELOW (FOR PLAYING MORE THAN ONE ROUND)
-// let playerScore;
-// let computerScore;
-// let finalResult;
+let finalResult;
             //may have to make roundResult a parameter for the playGame function
 // function playGame () {
 //     playerScore = 0;
@@ -136,25 +162,7 @@ let playerSelection;
     //     ++computerScore;
     // } else if (roundResult==="tie") {
     //     console.log("tie");
-    // }
-
-  
-            //original playgame function
-    
-
-
-//for loop attempt
-        // for (let step = 0; step < 5; step++) {
-        //     playRound();    
-        //     if (roundResult==="win") {
-        //         ++playerScore;
-        //     } else if (roundResult==="lose") {
-        //         ++computerScore;
-        //     } else if (roundResult==="tie") {
-        //         console.log("tie");
-        //     }
-        // }
-
+    // }    
 
 
 
