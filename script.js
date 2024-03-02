@@ -14,29 +14,14 @@ rockbtn.textContent = "Rock";
 paperbtn.textContent = "Paper";
 scissorsbtn.textContent = "Scissors";
 
-
-let playerSelection;
-function getUserChoice (){
-    rockbtn.addEventListener('click', () => {
-        console.log("Rock was clicked");
-        let playerSelection = "rock";
-        return playerSelection;
-    });
-    paperbtn.addEventListener('click', () => {
-        let playerSelection = "paper";
-        return playerSelection;
-    });
-    scissorsbtn.addEventListener('click', () => {
-        let playerSelection = "scissors";
-        return playerSelection;
-    });    
-}
+//Functions micro
 
 //Calculate computer choice
 let computerSelection;
 function getComputerChoice (){
     let computerNumber = Math.floor(Math.random()*3);
     let result = computerNumber;
+    //change to switch statement
     if (result===0) {
         computerSelection = "rock"
     } else if (result===1) {
@@ -47,11 +32,10 @@ function getComputerChoice (){
     return computerSelection;
 }
 
-
+//play one round of rps
 let roundResult;
-function playRound () {
+function playRound (playerSelection) {
     getComputerChoice();
-    getUserChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection===computerSelection) {
         console.log("IT'S A TIE!");
@@ -67,6 +51,24 @@ function playRound () {
         return roundResult;
     }
 }
+
+let playerSelection;
+    rockbtn.addEventListener('click', () => {
+        console.log("Rock was clicked");
+        let playerSelection = "rock";
+        playRound(playerSelection);    
+    });
+    paperbtn.addEventListener('click', () => {
+        console.log("Paper was clicked")
+        let playerSelection = "paper";
+        playRound(playerSelection);
+    });
+    scissorsbtn.addEventListener('click', () => {
+        console.log("Scissors was clickeddd")
+        let playerSelection = "scissors";
+        playRound(playerSelection);
+    });    
+    
 
 // buttondiv.addEventListener('click', playRound);
 
