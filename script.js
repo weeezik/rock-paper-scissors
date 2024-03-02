@@ -5,12 +5,34 @@ document.body.appendChild(buttondiv);
 const rockbtn = document.createElement("button");
 const paperbtn = document.createElement("button");
 const scissorsbtn = document.createElement("button");
+
 buttondiv.appendChild(rockbtn);
 buttondiv.appendChild(paperbtn);
 buttondiv.appendChild(scissorsbtn);
 
+rockbtn.textContent = "Rock";
+paperbtn.textContent = "Paper";
+scissorsbtn.textContent = "Scissors";
 
 
+let playerSelection;
+function getUserChoice (){
+    rockbtn.addEventListener('click', () => {
+        console.log("Rock was clicked");
+        let playerSelection = "rock";
+        return playerSelection;
+    });
+    paperbtn.addEventListener('click', () => {
+        let playerSelection = "paper";
+        return playerSelection;
+    });
+    scissorsbtn.addEventListener('click', () => {
+        let playerSelection = "scissors";
+        return playerSelection;
+    });    
+}
+
+//Calculate computer choice
 let computerSelection;
 function getComputerChoice (){
     let computerNumber = Math.floor(Math.random()*3);
@@ -23,17 +45,6 @@ function getComputerChoice (){
         computerSelection = "scissors"
     }
     return computerSelection;
-}
-
-let playerSelection;
-function getUserChoice (){
-    playerSelection1 = prompt("Type your throw! Rock, paper, or scissors?");
-    //remove spaces
-    playerSelection2 = playerSelection1.replace(" ", "");
-    //make all lower case. pretty sure the function is string.toLowerCase()
-    playerSelection = playerSelection2.toLowerCase();
-
-    return playerSelection;
 }
 
 
@@ -57,38 +68,41 @@ function playRound () {
     }
 }
 
+// buttondiv.addEventListener('click', playRound);
 
-let playerScore;
-let computerScore;
-let finalResult;
 
-//may have to make roundResult a parameter for the playGame function
-function playGame () {
-    playerScore = 0;
-    computerScore = 0;
-    function iterationLogic () {
-            if (roundResult==="win") {
-                ++playerScore;
-            } else if (roundResult==="lose") {
-                ++computerScore;
-            } else if (roundResult==="tie") {
-                //console.log("tie");
-            }
-        }
-        //1
-        playRound();
-        iterationLogic();        
 
-        let finalResult = Math.max(playerScore, computerScore);
-        if (finalResult===playerScore) {
-            console.log("Congratulations! You beat the computer in Rock, Paper, Scissors!")
-        } else {
-            console.log("Oh no! Looks like you lost to the computer :(")
-        }
+//THE CODE BELOW (FOR PLAYING MORE THAN ONE ROUND)
+// let playerScore;
+// let computerScore;
+// let finalResult;
+            //may have to make roundResult a parameter for the playGame function
+// function playGame () {
+//     playerScore = 0;
+//     computerScore = 0;
+//     function iterationLogic () {
+//             if (roundResult==="win") {
+//                 ++playerScore;
+//             } else if (roundResult==="lose") {
+//                 ++computerScore;
+//             } else if (roundResult==="tie") {
+//                 //console.log("tie");
+//             }
+//         }
+//         //1
+//         playRound();
+//         iterationLogic();        
+
+//         let finalResult = Math.max(playerScore, computerScore);
+//         if (finalResult===playerScore) {
+//             console.log("Congratulations! You beat the computer in Rock, Paper, Scissors!")
+//         } else {
+//             console.log("Oh no! Looks like you lost to the computer :(")
+//         }
     
-    }
+//     }
 
-playGame();
+// playGame();
 
 
 
