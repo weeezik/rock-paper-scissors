@@ -1,8 +1,18 @@
-// console.log("Hello world!");
+//DOM Manipulation
+
+const buttondiv = document.createElement('div');
+document.body.appendChild(buttondiv);
+const rockbtn = document.createElement("button");
+const paperbtn = document.createElement("button");
+const scissorsbtn = document.createElement("button");
+buttondiv.appendChild(rockbtn);
+buttondiv.appendChild(paperbtn);
+buttondiv.appendChild(scissorsbtn);
+
+
 
 let computerSelection;
 function getComputerChoice (){
-    // let computerSelection = "";
     let computerNumber = Math.floor(Math.random()*3);
     let result = computerNumber;
     if (result===0) {
@@ -12,7 +22,6 @@ function getComputerChoice (){
     } else if (result===2) {
         computerSelection = "scissors"
     }
-    // console.log(computerSelection);
     return computerSelection;
 }
 
@@ -26,8 +35,6 @@ function getUserChoice (){
 
     return playerSelection;
 }
-
-// console.log("Before function call: " + playerSelection, computerSelection);
 
 
 let roundResult;
@@ -51,13 +58,11 @@ function playRound () {
 }
 
 
-console.log(roundResult);
-
-
 let playerScore;
 let computerScore;
 let finalResult;
 
+//may have to make roundResult a parameter for the playGame function
 function playGame () {
     playerScore = 0;
     computerScore = 0;
@@ -76,9 +81,9 @@ function playGame () {
 
         let finalResult = Math.max(playerScore, computerScore);
         if (finalResult===playerScore) {
-            console.log("Congratulations! You beat the computer in rock paper scissors!")
+            console.log("Congratulations! You beat the computer in Rock, Paper, Scissors!")
         } else {
-            console.log("Ruh roh :( Looks like you lost to the computer.")
+            console.log("Oh no! Looks like you lost to the computer :(")
         }
     
     }
@@ -88,8 +93,7 @@ playGame();
 
 
 
-// console.log(playerScore);
-// console.log(computerScore);
+
 
 
 
