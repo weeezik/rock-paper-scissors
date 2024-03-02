@@ -27,10 +27,6 @@ function getUserChoice (){
     return playerSelection;
 }
 
-
-// getComputerChoice();
-// getUserChoice();
-
 // console.log("Before function call: " + playerSelection, computerSelection);
 
 
@@ -38,7 +34,7 @@ let roundResult;
 function playRound () {
     getComputerChoice();
     getUserChoice();
-    // console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
+    console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection===computerSelection) {
         console.log("IT'S A TIE!");
         roundResult = "tie";
@@ -54,8 +50,8 @@ function playRound () {
     }
 }
 
-// playRound();
-// console.log(roundResult);
+
+console.log(roundResult);
 
 
 let playerScore;
@@ -76,21 +72,7 @@ function playGame () {
         }
         //1
         playRound();
-        iterationLogic();
-        //2
-        playRound();
-        iterationLogic();
-        //3
-        playRound();
-        iterationLogic();
-        //4
-        playRound();
-        iterationLogic();
-        //5
-        playRound();
-        iterationLogic();
-
-        
+        iterationLogic();        
 
         let finalResult = Math.max(playerScore, computerScore);
         if (finalResult===playerScore) {
