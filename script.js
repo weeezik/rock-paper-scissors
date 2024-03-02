@@ -75,7 +75,10 @@ let playerSelection;
     rockbtn.addEventListener('click', () => {
         console.log("Rock was clicked");
         let playerSelection = "rock";
-        playRound(playerSelection);    
+        playRound(playerSelection); 
+        let playerScore = 0;
+        let computerScore = 0;
+        iterationLogic();
     });
     paperbtn.addEventListener('click', () => {
         console.log("Paper was clicked")
