@@ -1,22 +1,22 @@
 //DOM Manipulation
     //Buttons
-const buttondiv = document.createElement("div");
-document.body.appendChild(buttondiv);
-const rockbtn = document.createElement("button");
-const paperbtn = document.createElement("button");
-const scissorsbtn = document.createElement("button");
+    const buttondiv = document.createElement("div");
+    document.body.appendChild(buttondiv);
+    const rockbtn = document.createElement("button");
+    const paperbtn = document.createElement("button");
+    const scissorsbtn = document.createElement("button");
+    
+    buttondiv.appendChild(rockbtn);
+    buttondiv.appendChild(paperbtn);
+    buttondiv.appendChild(scissorsbtn);
+    
+    rockbtn.textContent = "Rock";
+    paperbtn.textContent = "Paper";
+    scissorsbtn.textContent = "Scissors";
 
-buttondiv.appendChild(rockbtn);
-buttondiv.appendChild(paperbtn);
-buttondiv.appendChild(scissorsbtn);
-
-rockbtn.textContent = "Rock";
-paperbtn.textContent = "Paper";
-scissorsbtn.textContent = "Scissors";
-
-
-
-
+    //Score Counter Div
+    const score = document.createElement("div");
+    document.body.appendChild(score);
 
 //Functions micro
 
@@ -76,8 +76,6 @@ let playerSelection;
         console.log("Rock was clicked");
         let playerSelection = "rock";
         playRound(playerSelection); 
-        let playerScore = 0;
-        let computerScore = 0;
         iterationLogic();
     });
     paperbtn.addEventListener('click', () => {
@@ -93,47 +91,26 @@ let playerSelection;
 
 
 
-
-
-    //Score Counter
-const score = document.createElement("div");
-document.body.appendChild(score);
-score.style.backgroundColor = "hotpink";
-score.textContent = "Player Score: " + playerScore + "      " + "Computer Score:" + computerScore;
-    //Flex attempt below doesn't throw an error, can be used when applicable to format
-// score.style.display = "flex";
-// score.style.justifyContent = "space-between";
-
-
-//THE CODE BELOW (FOR PLAYING MORE THAN ONE ROUND)
-let finalResult;
-            //may have to make roundResult a parameter for the playGame function
-// function playGame () {
-//     playerScore = 0;
-//     computerScore = 0;
-//     function iterationLogic () {
-//             if (roundResult==="win") {
-//                 ++playerScore;
-//             } else if (roundResult==="lose") {
-//                 ++computerScore;
-//             } else if (roundResult==="tie") {
-//                 //console.log("tie");
-//             }
-//         }
-//         //1
-//         playRound();
-//         iterationLogic();        
-
-//         let finalResult = Math.max(playerScore, computerScore);
-//         if (finalResult===playerScore) {
-//             console.log("Congratulations! You beat the computer in Rock, Paper, Scissors!")
-//         } else {
-//             console.log("Oh no! Looks like you lost to the computer :(")
-//         }
     
-//     }
+    // score.style.backgroundColor = "hotpink";
+    score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
+        
+        //Result Div
+    const results = document.createElement("div");
+    results.classList.add("results");
+    document.body.appendChild(results);
+    let textResult = "hello";
+    results.textContent = textResult;
 
-// playGame();
+
+
+    
+
+
+
+
+
+
 
 
 
