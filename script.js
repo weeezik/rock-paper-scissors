@@ -2,6 +2,7 @@
 //Buttons
 const buttondiv = document.createElement("div");
 document.body.appendChild(buttondiv);
+buttondiv.setAttribute("style", "padding: 40px; display: flex; justify-content: center; gap: 20px");
 const rockbtn = document.createElement("button");
 const paperbtn = document.createElement("button");
 const scissorsbtn = document.createElement("button");
@@ -14,18 +15,24 @@ rockbtn.textContent = "Rock";
 paperbtn.textContent = "Paper";
 scissorsbtn.textContent = "Scissors";
 
-//Score Counter Div
-const score = document.createElement("div");
-document.body.appendChild(score);
-// score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
-
 
 //Result Div
 const results = document.createElement("div");
 results.classList.add("results");
+results.setAttribute("style", "padding: 40px; display: flex; justify-content: center");
 document.body.appendChild(results);
 let textResult = "";
 results.textContent = textResult;
+
+//Score Counter Div
+const score = document.createElement("div");
+document.body.appendChild(score);
+score.setAttribute("style", "padding: 40px; display: flex; justify-content: center");
+
+// score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
+
+
+
 
 //Functions micro
 
@@ -67,7 +74,7 @@ function playRound(playerSelection) {
     getComputerChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection === computerSelection) {
-        results.textContent = "IT'S A TIE";
+        results.textContent = "IT'S A TIE, GO AGAIN";
         roundResult = "tie";
         return roundResult;
         //RESET, no scores awarded 
