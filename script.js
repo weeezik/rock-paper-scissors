@@ -18,6 +18,13 @@
     const score = document.createElement("div");
     document.body.appendChild(score);
 
+    //Result Div
+    const results = document.createElement("div");
+    results.classList.add("results");
+    document.body.appendChild(results);
+    let textResult = "";
+    results.textContent = textResult;
+
 //Functions micro
 
     //Calculate computer choice
@@ -42,15 +49,14 @@ function playRound (playerSelection) {
     getComputerChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection===computerSelection) {
-        console.log("IT'S A TIE!");
+        results.textContent = "IT'S A TIE";
         roundResult = "tie";
         return roundResult;
     } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
-        console.log("YOU WIN!!! :)");
+        results.textContent = "YOU WIN!!! :)";
         roundResult = "win";
         return roundResult;
-    } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {
-        console.log("YOU LOST THIS ONE :(");
+    } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {        results.textContent = "YOU LOST THIS ONE :(";
         roundResult = "lose";
         return roundResult;
     }
@@ -73,7 +79,8 @@ function iterationLogic () {
 //Functions macro
 let playerSelection;
     rockbtn.addEventListener('click', () => {
-        console.log("Rock was clicked");
+        // console.log("Rock was clicked");
+        let textResult = "Rock was clicked";
         let playerSelection = "rock";
         playRound(playerSelection); 
         iterationLogic();
@@ -95,12 +102,8 @@ let playerSelection;
     // score.style.backgroundColor = "hotpink";
     score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
         
-        //Result Div
-    const results = document.createElement("div");
-    results.classList.add("results");
-    document.body.appendChild(results);
-    let textResult = "hello";
-    results.textContent = textResult;
+        
+    
 
 
 
