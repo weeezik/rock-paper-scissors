@@ -75,58 +75,48 @@ function playRound(playerSelection) {
         results.textContent = "YOU WIN!!! :)";
         roundResult = "win";
         playerScore++;
-        return roundResult + playerScore + computerScore;
+        if (playerScore === 5) {
+            endGame(playerScore, computerScore);
+        } else {
+            return roundResult + playerScore + computerScore;
+        }  
 
     } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "scissors" && playerSelection === "paper") || (computerSelection === "paper" && playerSelection === "rock")) {
         results.textContent = "YOU LOST THIS ONE :(";
         roundResult = "lose";
         computerScore++;
-        return roundResult + playerScore + computerScore;
+        if (computerScore === 5) {
+            endGame(playerScore, computerScore);
+        } else {
+            return roundResult + playerScore + computerScore;
+        }
+        
     }
 }
+
+
+
 //playRound function is played on a click of one of the buttons. depending on the button, the user choice is set as the player selection 
 //(i.e., if user chooses rock button, the playerSelection variable is set to "rock")
 let playerSelection;
 rockbtn.addEventListener('click', () => {
     let playerSelection = "rock";
-    if (playerScore !=5 && computerScore !=5) {
-        playRound(playerSelection);
-        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
-    } else {
-        endGame(playerScore, computerScore)
-    }
+    playRound(playerSelection);
+    score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
     
 });
 paperbtn.addEventListener('click', () => {
     let playerSelection = "paper";
-    if (playerScore !=5 && computerScore !=5) {
-        playRound(playerSelection);
-        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
-    } else {
-        endGame(playerScore, computerScore)
-    }
+    playRound(playerSelection);
+    score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
     
-
 });
 scissorsbtn.addEventListener('click', () => {
     let playerSelection = "scissors";
-    if (playerScore !=5 && computerScore !=5) {
-        playRound(playerSelection);
-        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
-    } else {
-        endGame(playerScore, computerScore)
-    }
+    playRound(playerSelection);
+    score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
 
 });
-
-// let playerScore = 0;
-// let computerScore = 0;
-// if (playerScore !=5 && computerScore !=5) {
-
-
-
-
-// } else {endGame();}
 
 
 
