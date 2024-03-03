@@ -17,6 +17,8 @@
     //Score Counter Div
     const score = document.createElement("div");
     document.body.appendChild(score);
+    // score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
+
 
     //Result Div
     const results = document.createElement("div");
@@ -43,8 +45,16 @@ function getComputerChoice (){
     return computerSelection;
 }
 
-    //play one round of rps
+    
+do {
+
+
+} while (playerScore!=5 || computerScore!=5);
+
+//play one round of rps
 let roundResult;
+let playerScore=0; 
+let computerScore=0;
 function playRound (playerSelection) {
     getComputerChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
@@ -52,107 +62,38 @@ function playRound (playerSelection) {
         results.textContent = "IT'S A TIE";
         roundResult = "tie";
         return roundResult;
+        //RESET, no scores awarded 
     } else if ((playerSelection==="rock" && computerSelection==="scissors") || (playerSelection==="scissors" && computerSelection==="paper") || (playerSelection==="paper" && computerSelection==="rock")) {
         results.textContent = "YOU WIN!!! :)";
         roundResult = "win";
-        return roundResult;
+        playerScore++;
+        return roundResult + playerScore + computerScore;
+       
     } else if ((computerSelection==="rock" && playerSelection==="scissors") || (computerSelection==="scissors" && playerSelection==="paper") || (computerSelection==="paper" && playerSelection==="rock")) {        results.textContent = "YOU LOST THIS ONE :(";
         roundResult = "lose";
-        return roundResult;
+        computerScore++;
+        return roundResult + playerScore + computerScore;
     }
 }
-
-//Iteration logic for playing more than one round
-let playerScore;
-let computerScore;
-function iterationLogic () {
-                if (roundResult==="win") {
-                    ++playerScore;
-                } else if (roundResult==="lose") {
-                    ++computerScore;
-                } else if (roundResult==="tie") {
-                    //console.log("tie");
-                }
-            }
-
-
-//Functions macro
+//playRound function is played on a click of one of the buttons. depending on the button, the user choice is set as the player selection 
+//(i.e., if user chooses rock button, the playerSelection variable is set to "rock")
 let playerSelection;
     rockbtn.addEventListener('click', () => {
-        // console.log("Rock was clicked");
-        let textResult = "Rock was clicked";
         let playerSelection = "rock";
         playRound(playerSelection); 
-        iterationLogic();
+        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
     });
     paperbtn.addEventListener('click', () => {
-        console.log("Paper was clicked")
         let playerSelection = "paper";
         playRound(playerSelection);
+        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
+
     });
     scissorsbtn.addEventListener('click', () => {
-        console.log("Scissors was clicked")
         let playerSelection = "scissors";
         playRound(playerSelection);
+        score.textContent = "Player Score: " + playerScore + "   " + "Computer Score: " + computerScore;
+
     });
 
-
-
     
-    // score.style.backgroundColor = "hotpink";
-    score.textContent = "Player Score: " + playerScore + " " + "Computer Score:" + computerScore;
-        
-        
-    
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//1
-            //iteration attempt at function
-    // playRound();
-    // ++i;
-
-    // if (roundResult==="win") {
-    //     ++playerScore;
-    // } else if (roundResult==="lose") {
-    //     ++computerScore;
-    // } else if (roundResult==="tie") {
-    //     console.log("tie");
-    // }    
-
-
-
-
-
-
-
-
-
-
