@@ -49,8 +49,12 @@ function endGame(playerScore, computerScore) {
     let winner = Math.max(playerScore, computerScore);
     if (winner == playerScore) {
         results.textContent = "You beat the computer!";
+        results.style.color = "green";
+        results.style.textAlign = "center";
     } else if (winner == computerScore) {
         results.textContent = "The computer beat you!";
+        results.style.color = "red";
+        results.style.textAlign = "center";
     } else {
         results.textContent = "ERROR"
     }
