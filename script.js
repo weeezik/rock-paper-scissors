@@ -74,12 +74,12 @@ function playRound(playerSelection) {
     getComputerChoice();
     console.log("User: " + playerSelection + "   " + "Computer: " + computerSelection);
     if (playerSelection === computerSelection) {
-        results.textContent = "IT'S A TIE, GO AGAIN";
+        results.textContent = "It's a tie, go again!";
         roundResult = "tie";
         return roundResult;
         //RESET, no scores awarded 
     } else if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "rock")) {
-        results.textContent = "YOU WIN!!! :)";
+        results.textContent = "You won this round! Go again.";
         roundResult = "win";
         playerScore++;
         if (playerScore === 5) {
@@ -89,7 +89,7 @@ function playRound(playerSelection) {
         }  
 
     } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "scissors" && playerSelection === "paper") || (computerSelection === "paper" && playerSelection === "rock")) {
-        results.textContent = "YOU LOST THIS ONE :(";
+        results.textContent = "You lost this one :( Go again!";
         roundResult = "lose";
         computerScore++;
         if (computerScore === 5) {
